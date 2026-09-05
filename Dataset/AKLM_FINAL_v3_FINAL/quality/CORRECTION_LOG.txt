@@ -1,0 +1,77 @@
+AKLM-FINAL-v3 CORRECTION LOG
+
+1. PAGE-INVENTORY ISSUE
+Original: 18,300 lifecycle changes including 200 page_addition and 100 page_deletion events.
+Finding: corpus_pages.csv consistently contains P01-P10 for all 200 websites and all 10 versions.
+Action: removed the 300 unsupported inventory records from lifecycle/changes.csv.
+Result: lifecycle changes now align with lifecycle/version_lineage.csv at 18,000 records.
+
+2. CONFLICT REVIEW ISSUE
+Original: 15 conflict cases used identical version_a and version_b.
+Action: changed each self-comparison to the immediately following version.
+Examples:
+CF0030 W030 V03->V03 became V03->V04
+CF0031 W031 V04->V04 became V04->V05
+CF0032 W032 V05->V05 became V05->V06
+...
+CF0118 W118 V07->V07 became V07->V08
+Verification: every repaired pair has page-level content differences in the corpus.
+
+3. UNCHANGED
+Corpus structure, RAG chunks, evaluation questions, stale cases, and train/validation/test splits were not modified.
+The 100% consecutive-version content-change characteristic was retained.
+
+4. STALE-CASE COVERAGE GAPS (v3.1 derived-label extension)
+Finding: stale_cases.csv contained 1,200 rows covering only 6 of the 10 website x version-pair combos per
+website (7 base combos with one missing per website) and never the V01->V02, V08->V10 or V09->V10 pairs.
+521 questions referenced 520 stale scenarios; 460 referenced a (stale, required) tuple with stale < required
+and 60 treated a stale version equal to the current (fresh-index) target V01.
+Action: extended stale_cases.csv to the full cross-product (200 websites x 10 pairs = 2,000 rows).
+Every original row was preserved untouched; new rows are flagged added_cover_gap=yes.
+Result: 100% of stale questions with stale < required now link 1:1 to a stale_case row; fresh-index
+questions (V01->V01) intentionally have no case and resolve to a "safe, no refresh needed" gold.
+This includes the previously missing V08->V10 and V09->V10 pairs.
+
+5. CONFLICT-CASE COVERAGE (v3.1 derived-label extension)
+Finding: conflict_cases.csv had a row for only 150 of 200 websites.
+Action: added one deterministic record for each of the 50 missing websites (flagged added_cover_gap=yes),
+and added resolution metadata to all rows: resolved_version = max(version_a, version_b),
+snapshot_is_newer, resolution_rule = prefer_authoritative_newer_of_pair.
+Result: 200/200 websites covered; 100% of conflict questions link to their website's conflict record.
+
+6. GOLD ANSWERS (v3.1 derived-label extension)
+Finding: questions.csv carried only coarse expected_behavior strings ("Retrieve the version pair and
+classify the change") with no resolved answers, supporting chunks, or citations.
+Action: added derivation columns that are deterministic functions of the canonical corpus and
+lifecycle/changes.csv: gold_answer, supporting_chunk_ids, citation_required_document_ids,
+gold_available, gold_derivation, version_a/version_b, snapshot_version, stale_case_id, conflict_id.
+Result: 5,200/5,200 rows gold_available=yes with non-empty gold dropped from corpus entities;
+4680 questions carry supporting chunk ids; retrieval_control carries none by design.
+Semantics:
+- comparison: policy page entity diff (identical version pair -> "No change").
+- change_detection: change_type lookup from changes.csv; V01 = initial release (no predecessor).
+- stale: refresh decision + chunk ids to swap.
+- historical: pricing page at requested version + diff vs V10.
+- conflict: current authoritative release governs; older snapshot superseded.
+- policy/freshness/requirement: deterministic render of target page entities.
+- multi_document: combined services (P09) + support (P04) render.
+- retrieval_control: arithmetic answer, no retrieval.
+
+7. CHUNK-LEVEL DIFFS (v3.1 derived-label extension)
+Action: lifecycle/chunk_changes.csv derived from rag/chunks.csv text equality per (change_id, chunk_index).
+All 36,000 chunk rows (18,000 events x 2 chunks) are text-modified, consistent with the 100%
+consecutive-version content change rate. embedding_affected is assigned deterministically from text
+equality (documented decision; requires_reembedding='conditional' for reordering is retained as the
+original signal without an embedding-model dependency).
+
+8. VERSION TIMESTAMPS (v3.1 derived-label extension)
+Action: lifecycle/version_timestamps.csv defines a synthetic release schedule V01=2026-01-01 with +7 days
+per version. lifecycle/changes.csv change_event_timestamp = release date of to_version
+(source column recorded). Timestamps are monotonic and strictly +7 days.
+
+9. RE-AUDIT
+Action: full integrity re-audit ran after all extensions. Final status PASS (see FINAL_AUDIT.md and
+audit_report.json). Verified: hashes reproducible, chunk diffs consistent with changes.csv, 100%
+stale/conflict question-case linkage, all supporting chunk ids resolve to rag/chunks.csv, citations
+resolve to corpus document ids, one-split-per-website (train 160 / validation 20 / test 20), no
+question or chunk duplicates, no split leakage.

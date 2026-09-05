@@ -1,0 +1,18 @@
+1. Create account on firecrawler
+
+2. get create api key name it AKLM
+ 2.1 pip install firecrawl-py
+ 2.2 python -m pip show firecrawl-py
+ 2.3 python -c "from firecrawl import Firecrawl; print('Firecrawl working')"
+ 
+3. add that key to .env file tehn attach that file to the testCrawler.py named file which is the first step
+	3.1 python -m pip install langchain-text-splitters
+
+4. Create valid chunks of the data
+
+5. create embeddings 
+	install bge model
+6. connect to local qdrant vector db 
+7. retive the required n exped data from the qdrant 
+8. generate answer using retrived relevant data
+	pip install google-genai python-dotenv

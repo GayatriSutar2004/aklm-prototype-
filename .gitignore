@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Secrets — never commit
+.env
+.env.bak
+
+# Local vector database (rebuilt automatically by build_index.py)
+qdrant_storage/
+
+# Generated embedding / build artifacts
+embedded_chunks.json
+apply_cache.json
+apply_log.txt
+apply_err.txt
+
+# Trained models (reproducible from the dataset)
+models/*.joblib
+
+# Crawler output
+scraped_data/

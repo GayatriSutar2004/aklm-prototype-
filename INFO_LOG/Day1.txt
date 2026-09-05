@@ -1,0 +1,896 @@
+
+D:\practicceProjects\ResearchPrj\Prototype-AKLM>pip install firecrawl-py
+WARNING: Cache entry deserialization failed, entry ignored
+Defaulting to user installation because normal site-packages is not writeable
+Collecting firecrawl-py
+  Downloading firecrawl_py-4.38.0-py3-none-any.whl.metadata (14 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting requests (from firecrawl-py)
+  Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting httpx (from firecrawl-py)
+  Using cached httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting python-dotenv (from firecrawl-py)
+  Downloading python_dotenv-1.2.3-py3-none-any.whl.metadata (29 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting websockets (from firecrawl-py)
+  Downloading websockets-17.0.1-cp314-cp314-win_amd64.whl.metadata (6.5 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting nest-asyncio (from firecrawl-py)
+  Using cached nest_asyncio-1.6.0-py3-none-any.whl.metadata (2.8 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting pydantic>=2.0 (from firecrawl-py)
+  Downloading pydantic-2.13.4-py3-none-any.whl.metadata (109 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting aiohttp (from firecrawl-py)
+  Downloading aiohttp-3.14.3-cp314-cp314-win_amd64.whl.metadata (8.5 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting annotated-types>=0.6.0 (from pydantic>=2.0->firecrawl-py)
+  Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting pydantic-core==2.46.4 (from pydantic>=2.0->firecrawl-py)
+  Downloading pydantic_core-2.46.4-cp314-cp314-win_amd64.whl.metadata (6.7 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting typing-extensions>=4.14.1 (from pydantic>=2.0->firecrawl-py)
+  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting typing-inspection>=0.4.2 (from pydantic>=2.0->firecrawl-py)
+  Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting aiohappyeyeballs>=2.5.0 (from aiohttp->firecrawl-py)
+  Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl.metadata (5.9 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting aiosignal>=1.4.0 (from aiohttp->firecrawl-py)
+  Using cached aiosignal-1.4.0-py3-none-any.whl.metadata (3.7 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting attrs>=17.3.0 (from aiohttp->firecrawl-py)
+  Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting frozenlist>=1.1.1 (from aiohttp->firecrawl-py)
+  Downloading frozenlist-1.8.0-cp314-cp314-win_amd64.whl.metadata (21 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting multidict<7.0,>=4.5 (from aiohttp->firecrawl-py)
+  Downloading multidict-6.7.1-cp314-cp314-win_amd64.whl.metadata (5.5 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting propcache>=0.2.0 (from aiohttp->firecrawl-py)
+  Downloading propcache-0.5.2-cp314-cp314-win_amd64.whl.metadata (17 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting yarl<2.0,>=1.17.0 (from aiohttp->firecrawl-py)
+  Downloading yarl-1.24.5-cp314-cp314-win_amd64.whl.metadata (107 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting idna>=2.0 (from yarl<2.0,>=1.17.0->aiohttp->firecrawl-py)
+  Downloading idna-3.19-py3-none-any.whl.metadata (9.2 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting anyio (from httpx->firecrawl-py)
+  Downloading anyio-4.14.2-py3-none-any.whl.metadata (4.6 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting certifi (from httpx->firecrawl-py)
+  Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting httpcore==1.* (from httpx->firecrawl-py)
+  Using cached httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting h11>=0.16 (from httpcore==1.*->httpx->firecrawl-py)
+  Using cached h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting charset_normalizer<4,>=2 (from requests->firecrawl-py)
+  Downloading charset_normalizer-3.5.1-cp314-cp314-win_amd64.whl.metadata (46 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting urllib3<3,>=1.26 (from requests->firecrawl-py)
+  Downloading urllib3-2.7.0-py3-none-any.whl.metadata (6.9 kB)
+Downloading firecrawl_py-4.38.0-py3-none-any.whl (276 kB)
+Downloading pydantic-2.13.4-py3-none-any.whl (472 kB)
+Downloading pydantic_core-2.46.4-cp314-cp314-win_amd64.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 44.3 kB/s  0:00:48
+Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+Downloading aiohttp-3.14.3-cp314-cp314-win_amd64.whl (481 kB)
+Downloading multidict-6.7.1-cp314-cp314-win_amd64.whl (45 kB)
+Downloading yarl-1.24.5-cp314-cp314-win_amd64.whl (99 kB)
+Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl (15 kB)
+Using cached aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+Downloading frozenlist-1.8.0-cp314-cp314-win_amd64.whl (44 kB)
+Downloading idna-3.19-py3-none-any.whl (68 kB)
+Downloading propcache-0.5.2-cp314-cp314-win_amd64.whl (42 kB)
+Using cached httpx-0.28.1-py3-none-any.whl (73 kB)
+Using cached httpcore-1.0.9-py3-none-any.whl (78 kB)
+Using cached h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading anyio-4.14.2-py3-none-any.whl (125 kB)
+Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+Using cached nest_asyncio-1.6.0-py3-none-any.whl (5.2 kB)
+Downloading python_dotenv-1.2.3-py3-none-any.whl (22 kB)
+Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+Downloading charset_normalizer-3.5.1-cp314-cp314-win_amd64.whl (204 kB)
+Downloading urllib3-2.7.0-py3-none-any.whl (131 kB)
+Downloading websockets-17.0.1-cp314-cp314-win_amd64.whl (212 kB)
+Installing collected packages: websockets, urllib3, typing-extensions, python-dotenv, propcache, nest-asyncio, multidict, idna, h11, frozenlist, charset_normalizer, certifi, attrs, annotated-types, aiohappyeyeballs, yarl, typing-inspection, requests, pydantic-core, httpcore, anyio, aiosignal, pydantic, httpx, aiohttp, firecrawl-py
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  0/26 [websockets]  WARNING: The script websockets.exe is installed in 'C:\Users\gayat\AppData\Roaming\Python\Python314\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+   ━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  2/26 [typing-extensions]  WARNING: The script dotenv.exe is installed in 'C:\Users\gayat\AppData\Roaming\Python\Python314\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+   ━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  7/26 [idna]  WARNING: The script idna.exe is installed in 'C:\Users\gayat\AppData\Roaming\Python\Python314\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+   ━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━ 10/26 [charset_normalizer]  WARNING: The script normalizer.exe is installed in 'C:\Users\gayat\AppData\Roaming\Python\Python314\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━ 23/26 [httpx]  WARNING: The script httpx.exe is installed in 'C:\Users\gayat\AppData\Roaming\Python\Python314\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed aiohappyeyeballs-2.7.1 aiohttp-3.14.3 aiosignal-1.4.0 annotated-types-0.8.0 anyio-4.14.2 attrs-26.1.0 certifi-2026.7.22 charset_normalizer-3.5.1 firecrawl-py-4.38.0 frozenlist-1.8.0 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 idna-3.19 multidict-6.7.1 nest-asyncio-1.6.0 propcache-0.5.2 pydantic-2.13.4 pydantic-core-2.46.4 python-dotenv-1.2.3 requests-2.34.2 typing-extensions-4.16.0 typing-inspection-0.4.4 urllib3-2.7.0 websockets-17.0.1 yarl-1.24.5
+
+[notice] A new release of pip is available: 26.1.1 -> 26.2.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+D:\practicceProjects\ResearchPrj\Prototype-AKLM>python -m pip show firecrawl-py
+Name: firecrawl-py
+Version: 4.38.0
+Summary: Python SDK for the Firecrawl API: web scraping, crawling, web search, and scientific literature search over a research paper index of PubMed, bioRxiv, medRxiv and arXiv abstracts
+Home-page: https://github.com/firecrawl/firecrawl
+Author: Mendable.ai
+Author-email: "Mendable.ai" <nick@mendable.ai>
+License: MIT License
+Location: C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages
+Requires: aiohttp, httpx, nest-asyncio, pydantic, python-dotenv, requests, websockets
+Required-by:
+
+D:\practicceProjects\ResearchPrj\Prototype-AKLM>python -c "from firecrawl import Firecrawl; print('Firecrawl working')"
+Firecrawl working
+
+D:\practicceProjects\ResearchPrj\Prototype-AKLM>python --version
+Python 3.14.5
+
+D:\practicceProjects\ResearchPrj\Prototype-AKLM>python -m pip --version
+pip 26.1.1 from C:\Python314\Lib\site-packages\pip (python 3.14)
+
+D:\practicceProjects\ResearchPrj\Prototype-AKLM>python -m pip show firecrawl-py
+Name: firecrawl-py
+Version: 4.38.0
+Summary: Python SDK for the Firecrawl API: web scraping, crawling, web search, and scientific literature search over a research paper index of PubMed, bioRxiv, medRxiv and arXiv abstracts
+Home-page: https://github.com/firecrawl/firecrawl
+Author: Mendable.ai
+Author-email: "Mendable.ai" <nick@mendable.ai>
+License: MIT License
+Location: C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages
+Requires: aiohttp, httpx, nest-asyncio, pydantic, python-dotenv, requests, websockets
+Required-by:
+
+D:\practicceProjects\ResearchPrj\Prototype-AKLM>python -c "import sys; print(sys.executable)"
+C:\Python314\python.exe
+
+D:\practicceProjects\ResearchPrj\Prototype-AKLM>python -c "from firecrawl import Firecrawl; print('SUCCESS - Firecrawl imported')"
+SUCCESS - Firecrawl imported
+
+D:\practicceProjects\ResearchPrj\Prototype-AKLM>python -m pip install firecrawl-py
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: firecrawl-py in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (4.38.0)
+Requirement already satisfied: requests in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from firecrawl-py) (2.34.2)
+Requirement already satisfied: httpx in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from firecrawl-py) (0.28.1)
+Requirement already satisfied: python-dotenv in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from firecrawl-py) (1.2.3)
+Requirement already satisfied: websockets in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from firecrawl-py) (17.0.1)
+Requirement already satisfied: nest-asyncio in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from firecrawl-py) (1.6.0)
+Requirement already satisfied: pydantic>=2.0 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from firecrawl-py) (2.13.4)
+Requirement already satisfied: aiohttp in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from firecrawl-py) (3.14.3)
+Requirement already satisfied: annotated-types>=0.6.0 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from pydantic>=2.0->firecrawl-py) (0.8.0)
+Requirement already satisfied: pydantic-core==2.46.4 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from pydantic>=2.0->firecrawl-py) (2.46.4)
+Requirement already satisfied: typing-extensions>=4.14.1 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from pydantic>=2.0->firecrawl-py) (4.16.0)
+Requirement already satisfied: typing-inspection>=0.4.2 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from pydantic>=2.0->firecrawl-py) (0.4.4)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from aiohttp->firecrawl-py) (2.7.1)
+Requirement already satisfied: aiosignal>=1.4.0 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from aiohttp->firecrawl-py) (1.4.0)
+Requirement already satisfied: attrs>=17.3.0 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from aiohttp->firecrawl-py) (26.1.0)
+Requirement already satisfied: frozenlist>=1.1.1 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from aiohttp->firecrawl-py) (1.8.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from aiohttp->firecrawl-py) (6.7.1)
+Requirement already satisfied: propcache>=0.2.0 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from aiohttp->firecrawl-py) (0.5.2)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from aiohttp->firecrawl-py) (1.24.5)
+Requirement already satisfied: idna>=2.0 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from yarl<2.0,>=1.17.0->aiohttp->firecrawl-py) (3.19)
+Requirement already satisfied: anyio in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from httpx->firecrawl-py) (4.14.2)
+Requirement already satisfied: certifi in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from httpx->firecrawl-py) (2026.7.22)
+Requirement already satisfied: httpcore==1.* in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from httpx->firecrawl-py) (1.0.9)
+Requirement already satisfied: h11>=0.16 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from httpcore==1.*->httpx->firecrawl-py) (0.16.0)
+Requirement already satisfied: charset_normalizer<4,>=2 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from requests->firecrawl-py) (3.5.1)
+Requirement already satisfied: urllib3<3,>=1.26 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from requests->firecrawl-py) (2.7.0)
+
+[notice] A new release of pip is available: 26.1.1 -> 26.2.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+D:\practicceProjects\ResearchPrj\Prototype-AKLM>python -c "from firecrawl import Firecrawl; print('SUCCESS')"
+SUCCESS
+
+D:\practicceProjects\ResearchPrj\Prototype-AKLM>python testCrawler.py
+Traceback (most recent call last):
+  File "D:\practicceProjects\ResearchPrj\Prototype-AKLM\testCrawler.py", line 13, in <module>
+    app = Firecrawl(api_key=api_key)
+  File "C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages\firecrawl\client.py", line 254, in __init__
+    self._v1_client = V1FirecrawlApp(api_key=api_key, api_url=api_url) if V1FirecrawlApp else None
+                      ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages\firecrawl\v1\client.py", line 535, in __init__
+    raise ValueError('No API key provided')
+ValueError: No API key provided
+
+D:\practicceProjects\ResearchPrj\Prototype-AKLM>python testCrawler.py
+status='completed' total=8 completed=8 credits_used=8 expires_at=datetime.datetime(2026, 8, 22, 16, 55, 49, tzinfo=TzInfo(0)) next=None data=[Document(markdown='# Welcome to ADCET Autonomous Portal\n\nEmpowering future engineers through innovation, research, and industry-oriented education.\n\nExplore Admissions 2026Virtual Campus Tour\n\n## Our Top Recruiters\n\n🏢\n\nInfosys160+ Offers\n\n🏢\n\nCapgemini130+ Offers\n\n🏢\n\nKPIT45+ Offers\n\n🏢\n\nTech Mahindra35+ Offers\n\n🏢\n\nAccenture30+ Offers\n\n🏢\n\nPersistent30+ Offers\n\n🏢\n\nCognizant22+ Offers\n\n🏢\n\nTATA Power15+ Offers\n\n🤖 Ask ADCET AI', html=None, raw_html=None, json=None, summary=None, metadata=DocumentMetadata(title='universityportal', description=None, url='https://universityportala.netlify.app/', language='en', keywords=None, robots=None, og_title=None, og_description=None, og_url=None, og_image=None, og_audio=None, og_determiner=None, og_locale=None, og_locale_alternate=None, og_site_name=None, og_video=None, favicon='https://universityportala.netlify.app/favicon.svg', dc_terms_created=None, dc_date_created=None, dc_date=None, dc_terms_type=None, dc_type=None, dc_terms_audience=None, dc_terms_subject=None, dc_subject=None, dc_description=None, dc_terms_keywords=None, modified_time=None, published_time=None, article_tag=None, article_section=None, source_url='https://universityportala.netlify.app/', status_code=200, scrape_id='01a0253f-a760-74ab-a405-8295044074e4', num_pages=None, total_pages=None, content_type='text/html; charset=UTF-8', proxy_used='basic', timezone='America/New_York', cache_state='miss', cached_at=None, credits_used=1, concurrency_limited=None, concurrency_queue_duration_ms=None, error=None, viewport='width=device-width, initial-scale=1.0', indexId='c035c862-ea9a-4898-a77b-a6443e7dc2a1'), links=None, images=None, screenshot=None, audio=None, video=None, actions=None, answer=None, highlights=None, warning=None, change_tracking=None, branding=None, product=None, menu=None, pages=None, blocks=None), Document(markdown='# Page not found\n\nLooks like you’ve followed a broken link or entered a URL that doesn’t\nexist on this site.\n\n\n* * *\n\nIf this is your site, and you weren’t expecting a 404 for this path,\nplease visit Netlify’s\n[“page not found” support guide](https://answers.netlify.com/t/support-guide-i-ve-deployed-my-site-but-i-still-see-page-not-found/125?utm_source=404page&utm_campaign=community_tracking)\nfor troubleshooting tips.', html=None, raw_html=None, json=None, summary=None, metadata=DocumentMetadata(title='Page not found', description=None, url='https://universityportala.netlify.app/about', language='en', keywords=None, robots=None, og_title=None, og_description=None, og_url=None, og_image=None, og_audio=None, og_determiner=None, og_locale=None, og_locale_alternate=None, og_site_name=None, og_video=None, favicon=None, dc_terms_created=None, dc_date_created=None, dc_date=None, dc_terms_type=None, dc_type=None, dc_terms_audience=None, dc_terms_subject=None, dc_subject=None, dc_description=None, dc_terms_keywords=None, modified_time=None, published_time=None, article_tag=None, article_section=None, source_url='https://universityportala.netlify.app/about', status_code=404, scrape_id='01a0253f-afe8-733e-8ce2-b79d8d8f1821', num_pages=None, total_pages=None, content_type='text/html; charset=utf-8', proxy_used='basic', timezone='America/New_York', cache_state='miss', cached_at=None, credits_used=1, concurrency_limited=None, concurrency_queue_duration_ms=None, error='Not Found', viewport='width=device-width, initial-scale=1.0', indexId='2948c6d2-9cfd-4aee-bbb9-d08877a97874'), links=None, images=None, screenshot=None, audio=None, video=None, actions=None, answer=None, highlights=None, warning=None, change_tracking=None, branding=None, product=None, menu=None, pages=None, blocks=None), Document(markdown='# Page not found\n\nLooks like you’ve followed a broken link or entered a URL that doesn’t\nexist on this site.\n\n\n* * *\n\nIf this is your site, and you weren’t expecting a 404 for this path,\nplease visit Netlify’s\n[“page not found” support guide](https://answers.netlify.com/t/support-guide-i-ve-deployed-my-site-but-i-still-see-page-not-found/125?utm_source=404page&utm_campaign=community_tracking)\nfor troubleshooting tips.', html=None, raw_html=None, json=None, summary=None, metadata=DocumentMetadata(title='Page not found', description=None, url='https://universityportala.netlify.app/admissions', language='en', keywords=None, robots=None, og_title=None, og_description=None, og_url=None, og_image=None, og_audio=None, og_determiner=None, og_locale=None, og_locale_alternate=None, og_site_name=None, og_video=None, favicon=None, dc_terms_created=None, dc_date_created=None, dc_date=None, dc_terms_type=None, dc_type=None, dc_terms_audience=None, dc_terms_subject=None, dc_subject=None, dc_description=None, dc_terms_keywords=None, modified_time=None, published_time=None, article_tag=None, article_section=None, source_url='https://universityportala.netlify.app/admissions', status_code=404, scrape_id='01a0253f-aff9-70ec-8295-7e04385d5453', num_pages=None, total_pages=None, content_type='text/html; charset=utf-8', proxy_used='basic', timezone=None, cache_state='hit', cached_at='2026-08-21T16:55:27.028Z', credits_used=1, concurrency_limited=None, concurrency_queue_duration_ms=None, error='Not Found', viewport='width=device-width, initial-scale=1.0'), links=None, images=None, screenshot=None, audio=None, video=None, actions=None, answer=None, highlights=None, warning="This scrape job was throttled at your current concurrency limit. If you'd like to scrape faster, you can upgrade your plan.", change_tracking=None, branding=None, product=None, menu=None, pages=None, blocks=None), Document(markdown='# Page not found\n\nLooks like you’ve followed a broken link or entered a URL that doesn’t\nexist on this site.\n\n\n* * *\n\nIf this is your site, and you weren’t expecting a 404 for this path,\nplease visit Netlify’s\n[“page not found” support guide](https://answers.netlify.com/t/support-guide-i-ve-deployed-my-site-but-i-still-see-page-not-found/125?utm_source=404page&utm_campaign=community_tracking)\nfor troubleshooting tips.', html=None, raw_html=None, json=None, summary=None, metadata=DocumentMetadata(title='Page not found', description=None, url='https://universityportala.netlify.app/courses', language='en', keywords=None, robots=None, og_title=None, og_description=None, og_url=None, og_image=None, og_audio=None, og_determiner=None, og_locale=None, og_locale_alternate=None, og_site_name=None, og_video=None, favicon=None, dc_terms_created=None, dc_date_created=None, dc_date=None, dc_terms_type=None, dc_type=None, dc_terms_audience=None, dc_terms_subject=None, dc_subject=None, dc_description=None, dc_terms_keywords=None, modified_time=None, published_time=None, article_tag=None, article_section=None, source_url='https://universityportala.netlify.app/courses', status_code=404, scrape_id='01a0253f-b005-70bd-b9eb-0b5b17ac20d1', num_pages=None, total_pages=None, content_type='text/html; charset=utf-8', proxy_used='basic', timezone='America/New_York', cache_state='miss', cached_at=None, credits_used=1, concurrency_limited=None, concurrency_queue_duration_ms=None, error='Not Found', viewport='width=device-width, initial-scale=1.0', indexId='ed7bc3ed-9f01-4c74-9156-bb3564e6a6c6'), links=None, images=None, screenshot=None, audio=None, video=None, actions=None, answer=None, highlights=None, warning="This scrape job was throttled at your current concurrency limit. If you'd like to scrape faster, you can upgrade your plan.", change_tracking=None, branding=None, product=None, menu=None, pages=None, blocks=None), Document(markdown='# Page not found\n\nLooks like you’ve followed a broken link or entered a URL that doesn’t\nexist on this site.\n\n\n* * *\n\nIf this is your site, and you weren’t expecting a 404 for this path,\nplease visit Netlify’s\n[“page not found” support guide](https://answers.netlify.com/t/support-guide-i-ve-deployed-my-site-but-i-still-see-page-not-found/125?utm_source=404page&utm_campaign=community_tracking)\nfor troubleshooting tips.', html=None, raw_html=None, json=None, summary=None, metadata=DocumentMetadata(title='Page not found', description=None, url='https://universityportala.netlify.app/faculty', language='en', keywords=None, robots=None, og_title=None, og_description=None, og_url=None, og_image=None, og_audio=None, og_determiner=None, og_locale=None, og_locale_alternate=None, og_site_name=None, og_video=None, favicon=None, dc_terms_created=None, dc_date_created=None, dc_date=None, dc_terms_type=None, dc_type=None, dc_terms_audience=None, dc_terms_subject=None, dc_subject=None, dc_description=None, dc_terms_keywords=None, modified_time=None, published_time=None, article_tag=None, article_section=None, source_url='https://universityportala.netlify.app/faculty', status_code=404, scrape_id='01a0253f-b010-7589-a61f-0eb78b00e6ab', num_pages=None, total_pages=None, content_type='text/html; charset=utf-8', proxy_used='basic', timezone='America/New_York', cache_state='miss', cached_at=None, credits_used=1, concurrency_limited=None, concurrency_queue_duration_ms=None, error='Not Found', viewport='width=device-width, initial-scale=1.0', indexId='50fdc3cb-7b56-4f87-9d41-7be736fa0c6a'), links=None, images=None, screenshot=None, audio=None, video=None, actions=None, answer=None, highlights=None, warning="This scrape job was throttled at your current concurrency limit. If you'd like to scrape faster, you can upgrade your plan.", change_tracking=None, branding=None, product=None, menu=None, pages=None, blocks=None), Document(markdown='# Page not found\n\nLooks like you’ve followed a broken link or entered a URL that doesn’t\nexist on this site.\n\n\n* * *\n\nIf this is your site, and you weren’t expecting a 404 for this path,\nplease visit Netlify’s\n[“page not found” support guide](https://answers.netlify.com/t/support-guide-i-ve-deployed-my-site-but-i-still-see-page-not-found/125?utm_source=404page&utm_campaign=community_tracking)\nfor troubleshooting tips.', html=None, raw_html=None, json=None, summary=None, metadata=DocumentMetadata(title='Page not found', description=None, url='https://universityportala.netlify.app/faq', language='en', keywords=None, robots=None, og_title=None, og_description=None, og_url=None, og_image=None, og_audio=None, og_determiner=None, og_locale=None, og_locale_alternate=None, og_site_name=None, og_video=None, favicon=None, dc_terms_created=None, dc_date_created=None, dc_date=None, dc_terms_type=None, dc_type=None, dc_terms_audience=None, dc_terms_subject=None, dc_subject=None, dc_description=None, dc_terms_keywords=None, modified_time=None, published_time=None, article_tag=None, article_section=None, source_url='https://universityportala.netlify.app/faq', status_code=404, scrape_id='01a0253f-b030-720f-b1b8-82adf28f8f0b', num_pages=None, total_pages=None, content_type='text/html; charset=utf-8', proxy_used='basic', timezone=None, cache_state='hit', cached_at='2026-08-21T16:55:29.487Z', credits_used=1, concurrency_limited=None, concurrency_queue_duration_ms=None, error='Not Found', viewport='width=device-width, initial-scale=1.0'), links=None, images=None, screenshot=None, audio=None, video=None, actions=None, answer=None, highlights=None, warning="This scrape job was throttled at your current concurrency limit. If you'd like to scrape faster, you can upgrade your plan.", change_tracking=None, branding=None, product=None, menu=None, pages=None, blocks=None), Document(markdown='# Page not found\n\nLooks like you’ve followed a broken link or entered a URL that doesn’t\nexist on this site.\n\n\n* * *\n\nIf this is your site, and you weren’t expecting a 404 for this path,\nplease visit Netlify’s\n[“page not found” support guide](https://answers.netlify.com/t/support-guide-i-ve-deployed-my-site-but-i-still-see-page-not-found/125?utm_source=404page&utm_campaign=community_tracking)\nfor troubleshooting tips.', html=None, raw_html=None, json=None, summary=None, metadata=DocumentMetadata(title='Page not found', description=None, url='https://universityportala.netlify.app/notices', language='en', keywords=None, robots=None, og_title=None, og_description=None, og_url=None, og_image=None, og_audio=None, og_determiner=None, og_locale=None, og_locale_alternate=None, og_site_name=None, og_video=None, favicon=None, dc_terms_created=None, dc_date_created=None, dc_date=None, dc_terms_type=None, dc_type=None, dc_terms_audience=None, dc_terms_subject=None, dc_subject=None, dc_description=None, dc_terms_keywords=None, modified_time=None, published_time=None, article_tag=None, article_section=None, source_url='https://universityportala.netlify.app/notices', status_code=404, scrape_id='01a0253f-b01c-737a-96d3-b41f44b87fd9', num_pages=None, total_pages=None, content_type='text/html; charset=utf-8', proxy_used='basic', timezone='America/New_York', cache_state='miss', cached_at=None, credits_used=1, concurrency_limited=None, concurrency_queue_duration_ms=None, error='Not Found', viewport='width=device-width, initial-scale=1.0', indexId='13f3057e-5b74-48b1-ab72-8fe50cf49ca8'), links=None, images=None, screenshot=None, audio=None, video=None, actions=None, answer=None, highlights=None, warning="This scrape job was throttled at your current concurrency limit. If you'd like to scrape faster, you can upgrade your plan.", change_tracking=None, branding=None, product=None, menu=None, pages=None, blocks=None), Document(markdown='# Page not found\n\nLooks like you’ve followed a broken link or entered a URL that doesn’t\nexist on this site.\n\n\n* * *\n\nIf this is your site, and you weren’t expecting a 404 for this path,\nplease visit Netlify’s\n[“page not found” support guide](https://answers.netlify.com/t/support-guide-i-ve-deployed-my-site-but-i-still-see-page-not-found/125?utm_source=404page&utm_campaign=community_tracking)\nfor troubleshooting tips.', html=None, raw_html=None, json=None, summary=None, metadata=DocumentMetadata(title='Page not found', description=None, url='https://universityportala.netlify.app/contact', language='en', keywords=None, robots=None, og_title=None, og_description=None, og_url=None, og_image=None, og_audio=None, og_determiner=None, og_locale=None, og_locale_alternate=None, og_site_name=None, og_video=None, favicon=None, dc_terms_created=None, dc_date_created=None, dc_date=None, dc_terms_type=None, dc_type=None, dc_terms_audience=None, dc_terms_subject=None, dc_subject=None, dc_description=None, dc_terms_keywords=None, modified_time=None, published_time=None, article_tag=None, article_section=None, source_url='https://universityportala.netlify.app/contact', status_code=404, scrape_id='01a0253f-b05c-702d-bd06-5660404bf430', num_pages=None, total_pages=None, content_type='text/html; charset=utf-8', proxy_used='basic', timezone=None, cache_state='hit', cached_at='2026-08-21T16:55:30.658Z', credits_used=1, concurrency_limited=None, concurrency_queue_duration_ms=None, error='Not Found', viewport='width=device-width, initial-scale=1.0'), links=None, images=None, screenshot=None, audio=None, video=None, actions=None, answer=None, highlights=None, warning="This scrape job was throttled at your current concurrency limit. If you'd like to scrape faster, you can upgrade your plan.", change_tracking=None, branding=None, product=None, menu=None, pages=None, blocks=None)]
+
+D:\practicceProjects\ResearchPrj\Prototype-AKLM>python -m pip install langchain-text-splitters
+Defaulting to user installation because normal site-packages is not writeable
+Collecting langchain-text-splitters
+  Downloading langchain_text_splitters-1.1.2-py3-none-any.whl.metadata (3.3 kB)
+Collecting langchain-core<2.0.0,>=1.2.31 (from langchain-text-splitters)
+  Downloading langchain_core-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+Requirement already satisfied: httpx<1.0.0,>=0.23.0 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from langchain-core<2.0.0,>=1.2.31->langchain-text-splitters) (0.28.1)
+Collecting jsonpatch<2.0.0,>=1.33.0 (from langchain-core<2.0.0,>=1.2.31->langchain-text-splitters)
+  Downloading jsonpatch-1.33-py2.py3-none-any.whl.metadata (3.0 kB)
+Collecting langchain-protocol>=0.0.17 (from langchain-core<2.0.0,>=1.2.31->langchain-text-splitters)
+  Downloading langchain_protocol-0.0.18-py3-none-any.whl.metadata (2.4 kB)
+Collecting langsmith<1.0.0,>=0.3.45 (from langchain-core<2.0.0,>=1.2.31->langchain-text-splitters)
+  Downloading langsmith-0.11.1-py3-none-any.whl.metadata (22 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting packaging>=23.2.0 (from langchain-core<2.0.0,>=1.2.31->langchain-text-splitters)
+  Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Requirement already satisfied: pydantic<3.0.0,>=2.7.4 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from langchain-core<2.0.0,>=1.2.31->langchain-text-splitters) (2.13.4)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting pyyaml<7.0.0,>=5.3.0 (from langchain-core<2.0.0,>=1.2.31->langchain-text-splitters)
+  Downloading pyyaml-6.0.3-cp314-cp314-win_amd64.whl.metadata (2.4 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting tenacity!=8.4.0,<10.0.0,>=8.1.0 (from langchain-core<2.0.0,>=1.2.31->langchain-text-splitters)
+  Downloading tenacity-9.1.4-py3-none-any.whl.metadata (1.2 kB)
+Requirement already satisfied: typing-extensions<5.0.0,>=4.7.0 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from langchain-core<2.0.0,>=1.2.31->langchain-text-splitters) (4.16.0)
+Collecting uuid-utils<1.0,>=0.12.0 (from langchain-core<2.0.0,>=1.2.31->langchain-text-splitters)
+  Downloading uuid_utils-0.17.0-cp314-cp314-win_amd64.whl.metadata (6.5 kB)
+Requirement already satisfied: anyio in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from httpx<1.0.0,>=0.23.0->langchain-core<2.0.0,>=1.2.31->langchain-text-splitters) (4.14.2)
+Requirement already satisfied: certifi in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from httpx<1.0.0,>=0.23.0->langchain-core<2.0.0,>=1.2.31->langchain-text-splitters) (2026.7.22)
+Requirement already satisfied: httpcore==1.* in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from httpx<1.0.0,>=0.23.0->langchain-core<2.0.0,>=1.2.31->langchain-text-splitters) (1.0.9)
+Requirement already satisfied: idna in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from httpx<1.0.0,>=0.23.0->langchain-core<2.0.0,>=1.2.31->langchain-text-splitters) (3.19)
+Requirement already satisfied: h11>=0.16 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from httpcore==1.*->httpx<1.0.0,>=0.23.0->langchain-core<2.0.0,>=1.2.31->langchain-text-splitters) (0.16.0)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting jsonpointer>=1.9 (from jsonpatch<2.0.0,>=1.33.0->langchain-core<2.0.0,>=1.2.31->langchain-text-splitters)
+  Downloading jsonpointer-3.1.1-py3-none-any.whl.metadata (2.4 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting distro>=1.7.0 (from langsmith<1.0.0,>=0.3.45->langchain-core<2.0.0,>=1.2.31->langchain-text-splitters)
+  Using cached distro-1.9.0-py3-none-any.whl.metadata (6.8 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting orjson>=3.9.14 (from langsmith<1.0.0,>=0.3.45->langchain-core<2.0.0,>=1.2.31->langchain-text-splitters)
+  Downloading orjson-3.12.0-cp314-cp314-win_amd64.whl.metadata (43 kB)
+Collecting requests-toolbelt>=1.0.0 (from langsmith<1.0.0,>=0.3.45->langchain-core<2.0.0,>=1.2.31->langchain-text-splitters)
+  Downloading requests_toolbelt-1.0.0-py2.py3-none-any.whl.metadata (14 kB)
+Requirement already satisfied: requests>=2.0.0 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from langsmith<1.0.0,>=0.3.45->langchain-core<2.0.0,>=1.2.31->langchain-text-splitters) (2.34.2)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting sniffio>=1.1 (from langsmith<1.0.0,>=0.3.45->langchain-core<2.0.0,>=1.2.31->langchain-text-splitters)
+  Using cached sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+Requirement already satisfied: websockets>=15.0 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from langsmith<1.0.0,>=0.3.45->langchain-core<2.0.0,>=1.2.31->langchain-text-splitters) (17.0.1)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting xxhash>=3.0.0 (from langsmith<1.0.0,>=0.3.45->langchain-core<2.0.0,>=1.2.31->langchain-text-splitters)
+  Downloading xxhash-4.0.1-cp314-cp314-win_amd64.whl.metadata (18 kB)
+Collecting zstandard>=0.23.0 (from langsmith<1.0.0,>=0.3.45->langchain-core<2.0.0,>=1.2.31->langchain-text-splitters)
+  Downloading zstandard-0.25.0-cp314-cp314-win_amd64.whl.metadata (3.3 kB)
+Requirement already satisfied: annotated-types>=0.6.0 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from pydantic<3.0.0,>=2.7.4->langchain-core<2.0.0,>=1.2.31->langchain-text-splitters) (0.8.0)
+Requirement already satisfied: pydantic-core==2.46.4 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from pydantic<3.0.0,>=2.7.4->langchain-core<2.0.0,>=1.2.31->langchain-text-splitters) (2.46.4)
+Requirement already satisfied: typing-inspection>=0.4.2 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from pydantic<3.0.0,>=2.7.4->langchain-core<2.0.0,>=1.2.31->langchain-text-splitters) (0.4.4)
+Requirement already satisfied: charset_normalizer<4,>=2 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from requests>=2.0.0->langsmith<1.0.0,>=0.3.45->langchain-core<2.0.0,>=1.2.31->langchain-text-splitters) (3.5.1)
+Requirement already satisfied: urllib3<3,>=1.26 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from requests>=2.0.0->langsmith<1.0.0,>=0.3.45->langchain-core<2.0.0,>=1.2.31->langchain-text-splitters) (2.7.0)
+Downloading langchain_text_splitters-1.1.2-py3-none-any.whl (35 kB)
+Downloading langchain_core-1.6.0-py3-none-any.whl (570 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 570.0/570.0 kB 77.2 kB/s  0:00:09
+Downloading jsonpatch-1.33-py2.py3-none-any.whl (12 kB)
+Downloading langsmith-0.11.1-py3-none-any.whl (744 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 744.6/744.6 kB 92.5 kB/s  0:00:09
+Downloading pyyaml-6.0.3-cp314-cp314-win_amd64.whl (156 kB)
+Downloading tenacity-9.1.4-py3-none-any.whl (28 kB)
+Downloading uuid_utils-0.17.0-cp314-cp314-win_amd64.whl (175 kB)
+Using cached distro-1.9.0-py3-none-any.whl (20 kB)
+Downloading jsonpointer-3.1.1-py3-none-any.whl (7.7 kB)
+Downloading langchain_protocol-0.0.18-py3-none-any.whl (7.2 kB)
+Downloading orjson-3.12.0-cp314-cp314-win_amd64.whl (121 kB)
+Downloading packaging-26.3-py3-none-any.whl (129 kB)
+Downloading requests_toolbelt-1.0.0-py2.py3-none-any.whl (54 kB)
+Using cached sniffio-1.3.1-py3-none-any.whl (10 kB)
+Downloading xxhash-4.0.1-cp314-cp314-win_amd64.whl (37 kB)
+Downloading zstandard-0.25.0-cp314-cp314-win_amd64.whl (516 kB)
+Installing collected packages: zstandard, xxhash, uuid-utils, tenacity, sniffio, pyyaml, packaging, orjson, langchain-protocol, jsonpointer, distro, requests-toolbelt, jsonpatch, langsmith, langchain-core, langchain-text-splitters
+   ━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━ 10/16 [distro]  WARNING: The script distro.exe is installed in 'C:\Users\gayat\AppData\Roaming\Python\Python314\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed distro-1.9.0 jsonpatch-1.33 jsonpointer-3.1.1 langchain-core-1.6.0 langchain-protocol-0.0.18 langchain-text-splitters-1.1.2 langsmith-0.11.1 orjson-3.12.0 packaging-26.3 pyyaml-6.0.3 requests-toolbelt-1.0.0 sniffio-1.3.1 tenacity-9.1.4 uuid-utils-0.17.0 xxhash-4.0.1 zstandard-0.25.0
+
+[notice] A new release of pip is available: 26.1.1 -> 26.2.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+D:\practicceProjects\ResearchPrj\Prototype-AKLM>python chunk_data.py
+Traceback (most recent call last):
+  File "D:\practicceProjects\ResearchPrj\Prototype-AKLM\chunk_data.py", line 30, in <module>
+    raise RuntimeError(
+        "scraped_data folder not found. Run testCrawler.py first."
+    )
+RuntimeError: scraped_data folder not found. Run testCrawler.py first.
+
+D:\practicceProjects\ResearchPrj\Prototype-AKLM>python testCrawler.py
+Starting website crawl...
+Traceback (most recent call last):
+  File "D:\practicceProjects\ResearchPrj\Prototype-AKLM\testCrawler.py", line 55, in <module>
+    print("Status:", result.status)
+                     ^^^^^^^^^^^^^
+  File "C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages\pydantic\main.py", line 1042, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'Document' object has no attribute 'status'
+
+D:\practicceProjects\ResearchPrj\Prototype-AKLM>python testCrawler.py
+Starting website crawl...
+Status: completed
+Pages found: 8
+Pages completed: 8
+Saved: scraped_data\page_1.md
+Saved: scraped_data\page_2.md
+Saved: scraped_data\page_3.md
+Saved: scraped_data\page_4.md
+Saved: scraped_data\page_5.md
+Saved: scraped_data\page_6.md
+Saved: scraped_data\page_7.md
+Saved: scraped_data\page_8.md
+
+Crawling finished!
+
+D:\practicceProjects\ResearchPrj\Prototype-AKLM>python chunk_data.py
+Found 8 scraped pages.
+
+Processing: page_1.md
+Created 1 chunks.
+
+Processing: page_2.md
+Created 1 chunks.
+
+Processing: page_3.md
+Created 1 chunks.
+
+Processing: page_4.md
+Created 1 chunks.
+
+Processing: page_5.md
+Created 1 chunks.
+
+Processing: page_6.md
+Created 1 chunks.
+
+Processing: page_7.md
+Created 1 chunks.
+
+Processing: page_8.md
+Created 1 chunks.
+
+======================================
+CHUNKING COMPLETE
+======================================
+Pages processed : 8
+Total chunks    : 8
+Output file     : chunks.json
+
+First chunk:
+--------------------------------------
+ID: page_1_chunk_0
+Source: https://universityportala.netlify.app/
+Text:
+# Welcome to ADCET Autonomous Portal
+
+Empowering future engineers through innovation, research, and industry-oriented education.
+
+Explore Admissions 2026Virtual Campus Tour
+
+## Our Top Recruiters
+
+🏢
+
+Infosys160+ Offers
+
+🏢
+
+Capgemini130+ Offers
+
+🏢
+
+KPIT45+ Offers
+
+🏢
+
+Tech Mahindra35+ Offers
+
+🏢
+
+Accenture30+ Offers
+
+🏢
+
+Persistent30+ Offers
+
+🏢
+
+Cognizant22+ Offers
+
+🏢
+
+TATA Power15+ Offers
+
+🤖 Ask ADCET AI
+--------------------------------------
+
+D:\practicceProjects\ResearchPrj\Prototype-AKLM>python chunk_data.py
+Found 8 scraped pages.
+
+Processing: page_1.md
+✅ Valid page
+   URL: https://universityportala.netlify.app/
+   Created 1 chunks.
+
+Processing: page_2.md
+❌ REJECTED - 404 page
+   URL: https://universityportala.netlify.app/about
+
+Processing: page_3.md
+❌ REJECTED - 404 page
+   URL: https://universityportala.netlify.app/admissions
+
+Processing: page_4.md
+❌ REJECTED - 404 page
+   URL: https://universityportala.netlify.app/courses
+
+Processing: page_5.md
+❌ REJECTED - 404 page
+   URL: https://universityportala.netlify.app/faculty
+
+Processing: page_6.md
+❌ REJECTED - 404 page
+   URL: https://universityportala.netlify.app/notices
+
+Processing: page_7.md
+❌ REJECTED - 404 page
+   URL: https://universityportala.netlify.app/faq
+
+Processing: page_8.md
+❌ REJECTED - 404 page
+   URL: https://universityportala.netlify.app/contact
+
+======================================
+CHUNKING COMPLETE
+======================================
+Pages found     : 8
+Valid pages     : 1
+Rejected pages  : 7
+Total chunks    : 1
+Output file     : chunks.json
+
+======================================
+FIRST CHUNK
+======================================
+ID:
+page_1_chunk_0
+
+Source:
+https://universityportala.netlify.app/
+
+Text:
+--------------------------------------
+# Welcome to ADCET Autonomous Portal
+
+Empowering future engineers through innovation, research, and industry-oriented education.
+
+Explore Admissions 2026Virtual Campus Tour
+
+## Our Top Recruiters
+
+🏢
+
+Infosys160+ Offers
+
+🏢
+
+Capgemini130+ Offers
+
+🏢
+
+KPIT45+ Offers
+
+🏢
+
+Tech Mahindra35+ Offers
+
+🏢
+
+Accenture30+ Offers
+
+🏢
+
+Persistent30+ Offers
+
+🏢
+
+Cognizant22+ Offers
+
+🏢
+
+TATA Power15+ Offers
+
+🤖 Ask ADCET AI
+--------------------------------------
+
+D:\practicceProjects\ResearchPrj\Prototype-AKLM>
+
+D:\practicceProjects\ResearchPrj\Prototype-AKLM>python -m pip install sentence-transformers
+Defaulting to user installation because normal site-packages is not writeable
+Collecting sentence-transformers
+  Downloading sentence_transformers-6.0.0-py3-none-any.whl.metadata (20 kB)
+Collecting transformers<6.0.0,>=5.0.0 (from sentence-transformers)
+  Downloading transformers-5.15.1-py3-none-any.whl.metadata (32 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting tokenizers>=0.19 (from sentence-transformers)
+  Downloading tokenizers-0.23.1-cp310-abi3-win_amd64.whl.metadata (10 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting huggingface-hub<2.0.0,>=1.3.0 (from sentence-transformers)
+  Downloading huggingface_hub-1.28.0-py3-none-any.whl.metadata (16 kB)
+Collecting torch>=2.2 (from sentence-transformers)
+  Downloading torch-2.13.0-cp314-cp314-win_amd64.whl.metadata (39 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting numpy>=1.24.0 (from sentence-transformers)
+  Downloading numpy-2.5.2-cp314-cp314-win_amd64.whl.metadata (6.6 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting scikit-learn>=1.1.0 (from sentence-transformers)
+  Downloading scikit_learn-1.9.0-cp314-cp314-win_amd64.whl.metadata (11 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting scipy>=1.0.0 (from sentence-transformers)
+  Downloading scipy-1.18.0-cp314-cp314-win_amd64.whl.metadata (61 kB)
+Requirement already satisfied: typing_extensions>=4.10.0 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from sentence-transformers) (4.16.0)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting tqdm>=4.0.0 (from sentence-transformers)
+  Downloading tqdm-4.70.0-py3-none-any.whl.metadata (57 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting click<9.0.0,>=8.4.2 (from huggingface-hub<2.0.0,>=1.3.0->sentence-transformers)
+  Downloading click-8.4.2-py3-none-any.whl.metadata (2.6 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting filelock>=3.10.0 (from huggingface-hub<2.0.0,>=1.3.0->sentence-transformers)
+  Downloading filelock-3.32.3-py3-none-any.whl.metadata (2.0 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting fsspec>=2023.5.0 (from huggingface-hub<2.0.0,>=1.3.0->sentence-transformers)
+  Downloading fsspec-2026.7.0-py3-none-any.whl.metadata (10 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting hf-xet<2.0.0,>=1.5.2 (from huggingface-hub<2.0.0,>=1.3.0->sentence-transformers)
+  Downloading hf_xet-1.6.0-cp38-abi3-win_amd64.whl.metadata (4.9 kB)
+Requirement already satisfied: httpx<1,>=0.23.0 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from huggingface-hub<2.0.0,>=1.3.0->sentence-transformers) (0.28.1)
+Requirement already satisfied: packaging>=20.9 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from huggingface-hub<2.0.0,>=1.3.0->sentence-transformers) (26.3)
+Requirement already satisfied: pyyaml>=5.1 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from huggingface-hub<2.0.0,>=1.3.0->sentence-transformers) (6.0.3)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting colorama (from click<9.0.0,>=8.4.2->huggingface-hub<2.0.0,>=1.3.0->sentence-transformers)
+  Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+Requirement already satisfied: anyio in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from httpx<1,>=0.23.0->huggingface-hub<2.0.0,>=1.3.0->sentence-transformers) (4.14.2)
+Requirement already satisfied: certifi in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from httpx<1,>=0.23.0->huggingface-hub<2.0.0,>=1.3.0->sentence-transformers) (2026.7.22)
+Requirement already satisfied: httpcore==1.* in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from httpx<1,>=0.23.0->huggingface-hub<2.0.0,>=1.3.0->sentence-transformers) (1.0.9)
+Requirement already satisfied: idna in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from httpx<1,>=0.23.0->huggingface-hub<2.0.0,>=1.3.0->sentence-transformers) (3.19)
+Requirement already satisfied: h11>=0.16 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from httpcore==1.*->httpx<1,>=0.23.0->huggingface-hub<2.0.0,>=1.3.0->sentence-transformers) (0.16.0)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting regex>=2025.10.22 (from transformers<6.0.0,>=5.0.0->sentence-transformers)
+  Downloading regex-2026.7.19-cp314-cp314-win_amd64.whl.metadata (41 kB)
+Collecting tokenizers>=0.19 (from sentence-transformers)
+  Using cached tokenizers-0.22.2-cp39-abi3-win_amd64.whl.metadata (7.4 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting typer (from transformers<6.0.0,>=5.0.0->sentence-transformers)
+  Downloading typer-0.27.1-py3-none-any.whl.metadata (16 kB)
+Collecting safetensors>=0.8.0 (from transformers<6.0.0,>=5.0.0->sentence-transformers)
+  Downloading safetensors-0.8.0-cp310-abi3-win_amd64.whl.metadata (4.2 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting joblib>=1.4.0 (from scikit-learn>=1.1.0->sentence-transformers)
+  Using cached joblib-1.5.3-py3-none-any.whl.metadata (5.5 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting narwhals>=2.0.1 (from scikit-learn>=1.1.0->sentence-transformers)
+  Downloading narwhals-2.25.0-py3-none-any.whl.metadata (15 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting threadpoolctl>=3.5.0 (from scikit-learn>=1.1.0->sentence-transformers)
+  Using cached threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting setuptools>=77.0.3 (from torch>=2.2->sentence-transformers)
+  Downloading setuptools-84.0.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting sympy>=1.13.3 (from torch>=2.2->sentence-transformers)
+  Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting networkx>=2.5.1 (from torch>=2.2->sentence-transformers)
+  Using cached networkx-3.6.1-py3-none-any.whl.metadata (6.8 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting jinja2 (from torch>=2.2->sentence-transformers)
+  Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch>=2.2->sentence-transformers)
+  Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting MarkupSafe>=2.0 (from jinja2->torch>=2.2->sentence-transformers)
+  Downloading markupsafe-3.0.3-cp314-cp314-win_amd64.whl.metadata (2.8 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting shellingham>=1.3.0 (from typer->transformers<6.0.0,>=5.0.0->sentence-transformers)
+  Using cached shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting rich>=13.8.0 (from typer->transformers<6.0.0,>=5.0.0->sentence-transformers)
+  Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+Collecting annotated-doc>=0.0.2 (from typer->transformers<6.0.0,>=5.0.0->sentence-transformers)
+  Downloading annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting markdown-it-py>=2.2.0 (from rich>=13.8.0->typer->transformers<6.0.0,>=5.0.0->sentence-transformers)
+  Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting pygments<3.0.0,>=2.13.0 (from rich>=13.8.0->typer->transformers<6.0.0,>=5.0.0->sentence-transformers)
+  Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=13.8.0->typer->transformers<6.0.0,>=5.0.0->sentence-transformers)
+  Using cached mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Downloading sentence_transformers-6.0.0-py3-none-any.whl (739 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 739.6/739.6 kB 129.6 kB/s  0:00:05
+Downloading huggingface_hub-1.28.0-py3-none-any.whl (793 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 793.2/793.2 kB 171.8 kB/s  0:00:04
+Downloading click-8.4.2-py3-none-any.whl (119 kB)
+Downloading hf_xet-1.6.0-cp38-abi3-win_amd64.whl (4.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.0/4.0 MB 202.7 kB/s  0:00:20
+Downloading transformers-5.15.1-py3-none-any.whl (11.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.7/11.7 MB 230.7 kB/s  0:00:50
+Using cached tokenizers-0.22.2-cp39-abi3-win_amd64.whl (2.7 MB)
+Downloading filelock-3.32.3-py3-none-any.whl (98 kB)
+Downloading fsspec-2026.7.0-py3-none-any.whl (206 kB)
+Downloading numpy-2.5.2-cp314-cp314-win_amd64.whl (12.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.6/12.6 MB 195.8 kB/s  0:00:59
+Downloading regex-2026.7.19-cp314-cp314-win_amd64.whl (280 kB)
+Downloading safetensors-0.8.0-cp310-abi3-win_amd64.whl (355 kB)
+Downloading scikit_learn-1.9.0-cp314-cp314-win_amd64.whl (8.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.3/8.3 MB 183.6 kB/s  0:00:40
+Using cached joblib-1.5.3-py3-none-any.whl (309 kB)
+Downloading narwhals-2.25.0-py3-none-any.whl (467 kB)
+Downloading scipy-1.18.0-cp314-cp314-win_amd64.whl (37.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 37.3/37.3 MB 205.0 kB/s  0:03:34
+Using cached threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+Downloading torch-2.13.0-cp314-cp314-win_amd64.whl (122.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 122.1/122.1 MB 203.2 kB/s  0:09:45
+Using cached networkx-3.6.1-py3-none-any.whl (2.1 MB)
+Downloading setuptools-84.0.0-py3-none-any.whl (818 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 818.2/818.2 kB 181.0 kB/s  0:00:04
+Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 209.7 kB/s  0:00:30
+Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 265.8 kB/s  0:00:03
+Downloading tqdm-4.70.0-py3-none-any.whl (80 kB)
+Using cached colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+Downloading markupsafe-3.0.3-cp314-cp314-win_amd64.whl (15 kB)
+Downloading typer-0.27.1-py3-none-any.whl (122 kB)
+Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 160.8 kB/s  0:00:07
+Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+Using cached mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Using cached shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+Installing collected packages: mpmath, threadpoolctl, sympy, shellingham, setuptools, safetensors, regex, pygments, numpy, networkx, narwhals, mdurl, MarkupSafe, joblib, hf-xet, fsspec, filelock, colorama, annotated-doc, tqdm, scipy, markdown-it-py, jinja2, click, torch, scikit-learn, rich, huggingface-hub, typer, tokenizers, transformers, sentence-transformers
+   ━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  2/32 [sympy]  WARNING: The script isympy.exe is installed in 'C:\Users\gayat\AppData\Roaming\Python\Python314\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+   ━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  7/32 [pygments]  WARNING: The script pygmentize.exe is installed in 'C:\Users\gayat\AppData\Roaming\Python\Python314\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+   ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  8/32 [numpy]  WARNING: The scripts f2py.exe and numpy-config.exe are installed in 'C:\Users\gayat\AppData\Roaming\Python\Python314\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+   ━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━ 19/32 [tqdm]  WARNING: The script tqdm.exe is installed in 'C:\Users\gayat\AppData\Roaming\Python\Python314\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━ 21/32 [markdown-it-py]  WARNING: The script markdown-it.exe is installed in 'C:\Users\gayat\AppData\Roaming\Python\Python314\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━ 24/32 [torch]  WARNING: The scripts torchfrtrace.exe and torchrun.exe are installed in 'C:\Users\gayat\AppData\Roaming\Python\Python314\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━ 27/32 [huggingface-hub]  WARNING: The scripts hf.exe, huggingface-cli.exe and tiny-agents.exe are installed in 'C:\Users\gayat\AppData\Roaming\Python\Python314\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━ 28/32 [typer]  WARNING: The script typer.exe is installed in 'C:\Users\gayat\AppData\Roaming\Python\Python314\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━ 30/32 [transformers]  WARNING: The script transformers.exe is installed in 'C:\Users\gayat\AppData\Roaming\Python\Python314\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed MarkupSafe-3.0.3 annotated-doc-0.0.5 click-8.4.2 colorama-0.4.6 filelock-3.32.3 fsspec-2026.7.0 hf-xet-1.6.0 huggingface-hub-1.28.0 jinja2-3.1.6 joblib-1.5.3 markdown-it-py-4.2.0 mdurl-0.1.2 mpmath-1.3.0 narwhals-2.25.0 networkx-3.6.1 numpy-2.5.2 pygments-2.21.0 regex-2026.7.19 rich-15.0.0 safetensors-0.8.0 scikit-learn-1.9.0 scipy-1.18.0 sentence-transformers-6.0.0 setuptools-84.0.0 shellingham-1.5.4 sympy-1.14.0 threadpoolctl-3.6.0 tokenizers-0.22.2 torch-2.13.0 tqdm-4.70.0 transformers-5.15.1 typer-0.27.1
+
+[notice] A new release of pip is available: 26.1.1 -> 26.2.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+D:\practicceProjects\ResearchPrj\Prototype-AKLM>python create_embeddings.py
+Loaded 1 chunks.
+Loading embedding model...
+modules.json: 100%|██████████████████████████████████████| 349/349 [00:00<00:00, 511kB/s]
+C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages\huggingface_hub\file_download.py:141: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in C:\Users\gayat\.cache\huggingface\hub\models--BAAI--bge-small-en-v1.5. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.
+To support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development
+  warnings.warn(message)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config_sentence_transformers.json: 100%|█████████████████| 124/124 [00:00<00:00, 202kB/s]
+README.md: 100%|████████████████████████████████████| 94.8k/94.8k [00:00<00:00, 37.7MB/s]
+sentence_bert_config.json: 100%|███████████████████████| 52.0/52.0 [00:00<00:00, 122kB/s]
+config.json: 100%|██████████████████████████████████████| 743/743 [00:00<00:00, 1.52MB/s]
+model.safetensors: downloading bytes: ███████████████████████████████| 86.7MB, 3.47MB/s
+model.safetensors: reconstructing file: 100%|███████████████|  133MB /  133MB, 9.80MB/s
+Loading weights: 100%|███████████████████████████████| 199/199 [00:00<00:00, 5817.99it/s]
+tokenizer_config.json: 100%|█████████████████████████████| 366/366 [00:00<00:00, 712kB/s]
+vocab.txt: 100%|██████████████████████████████████████| 232k/232k [00:00<00:00, 3.31MB/s]
+tokenizer.json: 100%|█████████████████████████████████| 711k/711k [00:00<00:00, 7.36MB/s]
+special_tokens_map.json: 100%|███████████████████████████| 125/125 [00:00<00:00, 205kB/s]
+config.json: 100%|███████████████████████████████████████| 190/190 [00:00<00:00, 352kB/s]
+Embedding model loaded.
+Generating embeddings...
+
+======================================
+EMBEDDING COMPLETE
+======================================
+Chunks embedded: 1
+Embedding dimensions: 384
+
+Output saved to: embedded_chunks.json
+
+D:\practicceProjects\ResearchPrj\Prototype-AKLM>python store_embeddings.py
+========================================
+AKLM QDRANT STORAGE
+========================================
+Input file       : embedded_chunks.json
+Chunks received  : 1
+Vector dimension: 384
+
+Connecting to Qdrant...
+✅ Qdrant connected
+
+Collection already exists: aklm_knowledge
+
+Uploading 1 vectors...
+Traceback (most recent call last):
+  File "C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages\qdrant_client\local\local_collection.py", line 2561, in _upsert_point
+    _uuid = uuid.UUID(point.id)
+  File "C:\Python314\Lib\uuid.py", line 219, in __init__
+    raise ValueError('badly formed hexadecimal UUID string')
+ValueError: badly formed hexadecimal UUID string
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\practicceProjects\ResearchPrj\Prototype-AKLM\store_embeddings.py", line 182, in <module>
+    client.upsert(
+    ~~~~~~~~~~~~~^
+        collection_name=COLLECTION_NAME,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        points=points
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages\qdrant_client\qdrant_client.py", line 944, in upsert
+    return self._client.upsert(
+           ~~~~~~~~~~~~~~~~~~~^
+        collection_name=collection_name,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages\qdrant_client\local\qdrant_local.py", line 587, in upsert
+    collection.upsert(points, update_filter=update_filter, update_mode=update_mode)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages\qdrant_client\local\local_collection.py", line 2623, in upsert
+    self._upsert_point(point, update_filter=update_filter, update_mode=update_mode)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages\qdrant_client\local\local_collection.py", line 2563, in _upsert_point
+    raise ValueError(f"Point id {point.id} is not a valid UUID") from e
+ValueError: Point id page_1_chunk_0 is not a valid UUID
+Exception ignored while calling deallocator <function QdrantClient.__del__ at 0x00000147E9D4F5E0>:
+Traceback (most recent call last):
+  File "C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages\qdrant_client\qdrant_client.py", line 169, in __del__
+  File "C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages\qdrant_client\qdrant_client.py", line 178, in close
+  File "C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages\qdrant_client\local\qdrant_local.py", line 111, in close
+  File "C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages\portalocker\portalocker.py", line 339, in unlock
+  File "C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages\portalocker\portalocker.py", line 244, in unlock
+ModuleNotFoundError: import of msvcrt halted; None in sys.modules
+
+D:\practicceProjects\ResearchPrj\Prototype-AKLM>Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Users\gayat> cd ^C
+PS C:\Users\gayat> cd D:\practicceProjects\ResearchPrj\Prototype-AKLM
+PS D:\practicceProjects\ResearchPrj\Prototype-AKLM> python -m pip install qdrant-client
+Defaulting to user installation because normal site-packages is not writeable
+Collecting qdrant-client
+  Downloading qdrant_client-1.19.0-py3-none-any.whl.metadata (11 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting grpcio>=1.41.0 (from qdrant-client)
+  Downloading grpcio-1.83.0-cp314-cp314-win_amd64.whl.metadata (3.8 kB)
+Requirement already satisfied: httpx>=0.20.0 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from httpx[http2]>=0.20.0->qdrant-client) (0.28.1)
+Requirement already satisfied: numpy>=2.3.0 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from qdrant-client) (2.5.2)
+Collecting portalocker<4.0,>=2.7.0 (from qdrant-client)
+  Downloading portalocker-3.2.0-py3-none-any.whl.metadata (8.7 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting protobuf>=3.20.0 (from qdrant-client)
+  Downloading protobuf-7.36.0-cp310-abi3-win_amd64.whl.metadata (595 bytes)
+Requirement already satisfied: pydantic!=2.0.*,!=2.1.*,!=2.2.0,>=1.10.8 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from qdrant-client) (2.13.4)
+Requirement already satisfied: urllib3<3,>=1.26.14 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from qdrant-client) (2.7.0)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting pywin32>=226 (from portalocker<4.0,>=2.7.0->qdrant-client)
+  Downloading pywin32-312-cp314-cp314-win_amd64.whl.metadata (11 kB)
+Requirement already satisfied: typing-extensions~=4.12 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from grpcio>=1.41.0->qdrant-client) (4.16.0)
+Requirement already satisfied: anyio in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from httpx>=0.20.0->httpx[http2]>=0.20.0->qdrant-client) (4.14.2)
+Requirement already satisfied: certifi in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from httpx>=0.20.0->httpx[http2]>=0.20.0->qdrant-client) (2026.7.22)
+Requirement already satisfied: httpcore==1.* in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from httpx>=0.20.0->httpx[http2]>=0.20.0->qdrant-client) (1.0.9)
+Requirement already satisfied: idna in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from httpx>=0.20.0->httpx[http2]>=0.20.0->qdrant-client) (3.19)
+Requirement already satisfied: h11>=0.16 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from httpcore==1.*->httpx>=0.20.0->httpx[http2]>=0.20.0->qdrant-client) (0.16.0)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting h2<5,>=3 (from httpx[http2]>=0.20.0->qdrant-client)
+  Downloading h2-4.4.1-py3-none-any.whl.metadata (3.8 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting hyperframe<7,>=6.1 (from h2<5,>=3->httpx[http2]>=0.20.0->qdrant-client)
+  Using cached hyperframe-6.1.0-py3-none-any.whl.metadata (4.3 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting hpack<5,>=4.2 (from h2<5,>=3->httpx[http2]>=0.20.0->qdrant-client)
+  Downloading hpack-4.2.0-py3-none-any.whl.metadata (3.3 kB)
+Requirement already satisfied: annotated-types>=0.6.0 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from pydantic!=2.0.*,!=2.1.*,!=2.2.0,>=1.10.8->qdrant-client) (0.8.0)
+Requirement already satisfied: pydantic-core==2.46.4 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from pydantic!=2.0.*,!=2.1.*,!=2.2.0,>=1.10.8->qdrant-client) (2.46.4)
+Requirement already satisfied: typing-inspection>=0.4.2 in C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages (from pydantic!=2.0.*,!=2.1.*,!=2.2.0,>=1.10.8->qdrant-client) (0.4.4)
+Downloading qdrant_client-1.19.0-py3-none-any.whl (396 kB)
+Downloading portalocker-3.2.0-py3-none-any.whl (22 kB)
+Downloading grpcio-1.83.0-cp314-cp314-win_amd64.whl (5.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.3/5.3 MB 3.2 MB/s  0:00:01
+Downloading h2-4.4.1-py3-none-any.whl (62 kB)
+Downloading hpack-4.2.0-py3-none-any.whl (34 kB)
+Using cached hyperframe-6.1.0-py3-none-any.whl (13 kB)
+Downloading protobuf-7.36.0-cp310-abi3-win_amd64.whl (453 kB)
+Downloading pywin32-312-cp314-cp314-win_amd64.whl (7.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.0/7.0 MB 4.0 MB/s  0:00:01
+Installing collected packages: pywin32, protobuf, hyperframe, hpack, grpcio, portalocker, h2, qdrant-client
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0/8 [pywin32]  WARNING: The scripts pywin32_postinstall.exe and pywin32_testall.exe are installed in 'C:\Users\gayat\AppData\Roaming\Python\Python314\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed grpcio-1.83.0 h2-4.4.1 hpack-4.2.0 hyperframe-6.1.0 portalocker-3.2.0 protobuf-7.36.0 pywin32-312 qdrant-client-1.19.0
+
+[notice] A new release of pip is available: 26.1.1 -> 26.2.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+PS D:\practicceProjects\ResearchPrj\Prototype-AKLM>
+PS D:\practicceProjects\ResearchPrj\Prototype-AKLM> python store_embeddings.py
+========================================
+AKLM QDRANT STORAGE
+========================================
+Input file       : embedded_chunks.json
+Chunks received  : 1
+Vector dimension: 384
+
+Connecting to Qdrant...
+✅ Qdrant connected
+
+Creating collection: aklm_knowledge
+✅ Collection created
+
+Uploading 1 vectors...
+Traceback (most recent call last):
+  File "C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages\qdrant_client\local\local_collection.py", line 2561, in _upsert_point
+    _uuid = uuid.UUID(point.id)
+  File "C:\Python314\Lib\uuid.py", line 219, in __init__
+    raise ValueError('badly formed hexadecimal UUID string')
+ValueError: badly formed hexadecimal UUID string
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\practicceProjects\ResearchPrj\Prototype-AKLM\store_embeddings.py", line 182, in <module>
+    client.upsert(
+    ~~~~~~~~~~~~~^
+        collection_name=COLLECTION_NAME,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        points=points
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages\qdrant_client\qdrant_client.py", line 944, in upsert
+    return self._client.upsert(
+           ~~~~~~~~~~~~~~~~~~~^
+        collection_name=collection_name,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages\qdrant_client\local\qdrant_local.py", line 587, in upsert
+    collection.upsert(points, update_filter=update_filter, update_mode=update_mode)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages\qdrant_client\local\local_collection.py", line 2623, in upsert
+    self._upsert_point(point, update_filter=update_filter, update_mode=update_mode)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages\qdrant_client\local\local_collection.py", line 2563, in _upsert_point
+    raise ValueError(f"Point id {point.id} is not a valid UUID") from e
+ValueError: Point id page_1_chunk_0 is not a valid UUID
+Exception ignored while calling deallocator <function QdrantClient.__del__ at 0x0000021B8435F5E0>:
+Traceback (most recent call last):
+  File "C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages\qdrant_client\qdrant_client.py", line 169, in __del__
+  File "C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages\qdrant_client\qdrant_client.py", line 178, in close
+  File "C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages\qdrant_client\local\qdrant_local.py", line 111, in close
+  File "C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages\portalocker\portalocker.py", line 339, in unlock
+  File "C:\Users\gayat\AppData\Roaming\Python\Python314\site-packages\portalocker\portalocker.py", line 244, in unlock
+ModuleNotFoundError: import of msvcrt halted; None in sys.modules
+PS D:\practicceProjects\ResearchPrj\Prototype-AKLM>
