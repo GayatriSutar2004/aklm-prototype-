@@ -1,86 +1,38 @@
+"""
+Step 3a - Embed (standalone).
+
+Embeds chunks.json with Gemini (gemini-embedding-001, 3072-dim) via the shared
+aklm_lib and writes embedded_chunks.json.
+
+Note: run_pipeline.py embeds and stores in one go; this script exists so the
+embedding step can still be inspected on its own.
+"""
+
 import json
-from sentence_transformers import SentenceTransformer
+
+import aklm_lib
 
 
-# ---------------------------------------
-# 1. Load chunks
-# ---------------------------------------
+print("=" * 40)
+print("AKLM STEP 3a: EMBED (Gemini 3072-dim)")
+print("=" * 40)
 
-with open("chunks.json", "r", encoding="utf-8") as f:
+with open(aklm_lib.CHUNKS_FILE, "r", encoding="utf-8") as f:
     chunks = json.load(f)
 
+print(f"Loaded {len(chunks)} chunks from {aklm_lib.CHUNKS_FILE.name}")
 
-print(f"Loaded {len(chunks)} chunks.")
-
-
-# ---------------------------------------
-# 2. Load embedding model
-# ---------------------------------------
-
-print("Loading embedding model...")
-
-model = SentenceTransformer(
-    "BAAI/bge-small-en-v1.5"
+embeddings = aklm_lib.embed_texts(
+    [chunk["text"] for chunk in chunks],
+    task_type="RETRIEVAL_DOCUMENT"
 )
-
-print("Embedding model loaded.")
-
-
-# ---------------------------------------
-# 3. Generate embeddings
-# ---------------------------------------
-
-texts = [
-    chunk["text"]
-    for chunk in chunks
-]
-
-print("Generating embeddings...")
-
-embeddings = model.encode(
-    texts,
-    normalize_embeddings=True
-)
-
-
-# ---------------------------------------
-# 4. Add embeddings to chunks
-# ---------------------------------------
 
 for chunk, embedding in zip(chunks, embeddings):
+    chunk["embedding"] = embedding
 
-    chunk["embedding"] = embedding.tolist()
+with open(aklm_lib.EMBEDDED_FILE, "w", encoding="utf-8") as f:
+    json.dump(chunks, f, indent=2, ensure_ascii=False)
 
-
-# ---------------------------------------
-# 5. Save result
-# ---------------------------------------
-
-with open(
-    "embedded_chunks.json",
-    "w",
-    encoding="utf-8"
-) as f:
-
-    json.dump(
-        chunks,
-        f,
-        indent=2,
-        ensure_ascii=False
-    )
-
-
-print("\n======================================")
-print("EMBEDDING COMPLETE")
-print("======================================")
-
-print(f"Chunks embedded: {len(chunks)}")
-
-print(
-    f"Embedding dimensions: "
-    f"{len(chunks[0]['embedding'])}"
-)
-
-print(
-    "\nOutput saved to: embedded_chunks.json"
-)
+print(f"\nEmbedded {len(chunks)} chunks.")
+print(f"Dimensions: {len(chunks[0]['embedding'])}")
+print(f"Saved to: {aklm_lib.EMBEDDED_FILE.name}")

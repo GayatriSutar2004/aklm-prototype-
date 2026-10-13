@@ -2,10 +2,9 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
-from firecrawl import Firecrawl
-from firecrawl.types import ScrapeOptions
+from firecrawl import FirecrawlApp
 
-
+# Load environment variables
 env_path = Path(__file__).parent / ".env"
 load_dotenv(env_path)
 
@@ -14,8 +13,8 @@ api_key = os.getenv("FIRECRAWL_API_KEY")
 if not api_key:
     raise RuntimeError("FIRECRAWL_API_KEY not found")
 
-
-app = Firecrawl(api_key=api_key)
+# Initialize client
+app = FirecrawlApp(api_key=api_key)
 
 base_url = "https://adcetportal.vercel.app"
 
@@ -30,15 +29,7 @@ pages = [
     "/contact"
 ]
 
-
-options = ScrapeOptions(
-    formats=["markdown"],
-    max_age=0
-)
-
-
 for path in pages:
-
     url = base_url + path
 
     print("\n========================================")
@@ -46,34 +37,38 @@ for path in pages:
     print("========================================")
 
     try:
-
-        result = app.scrape(
+        # Pass formats directly as a list keyword argument
+        result = app.scrape_url(
             url,
-            scrape_options=options
+            formats=["markdown"]
         )
 
-        status = result.metadata.status_code
-        cache = result.metadata.cache_state
-        title = result.metadata.title
+        # Handle object response or dictionary response safely
+        if isinstance(result, dict):
+            metadata = result.get("metadata", {})
+            status = metadata.get("statusCode") or metadata.get("status_code")
+            cache = metadata.get("cacheState", "N/A")
+            title = metadata.get("title") or metadata.get("pageTitle", "N/A")
+            markdown = result.get("markdown", "")
+        else:
+            metadata = getattr(result, "metadata", None)
+            status = getattr(metadata, "status_code", getattr(metadata, "statusCode", None)) if metadata else None
+            cache = getattr(metadata, "cache_state", "N/A") if metadata else "N/A"
+            title = getattr(metadata, "title", "N/A") if metadata else "N/A"
+            markdown = getattr(result, "markdown", "") or ""
 
         print("Status :", status)
         print("Cache  :", cache)
         print("Title  :", title)
 
-        if status == 200:
+        if status == 200 or markdown:
             print("SUCCESS")
-
-            text = result.markdown or ""
-
-            print("Characters:", len(text))
+            print("Characters:", len(markdown))
             print("Preview:")
-            print(text[:300])
-
+            print(markdown[:300])
         else:
             print("FAILED")
-            print(result.markdown)
 
     except Exception as e:
-
         print("ERROR:", type(e).__name__)
         print(e)
