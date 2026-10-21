@@ -1,0 +1,7 @@
+# Minimal dependencies for the AKLM live pipeline (CI / GitHub Actions).
+# The full requirements.txt also installs sentence-transformers + torch for the
+# research collection (aklm_knowledge). The live pipeline does not need those.
+qdrant-client==1.19.0
+python-dotenv==1.2.3
+firecrawl-py==4.38.0
+langchain-text-splitters==1.1.2
