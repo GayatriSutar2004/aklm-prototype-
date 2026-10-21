@@ -560,6 +560,15 @@ def get_qdrant():
 
     from qdrant_client import QdrantClient
 
+    url = os.getenv("QDRANT_URL")
+
+    if url:
+        return QdrantClient(
+            url=url,
+            api_key=os.getenv("QDRANT_API_KEY"),
+            timeout=60
+        )
+
     return QdrantClient(path=QDRANT_PATH)
 
 
