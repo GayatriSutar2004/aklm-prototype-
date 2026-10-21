@@ -3,9 +3,10 @@ import sys
 from pathlib import Path
 
 import pandas as pd
-from qdrant_client import QdrantClient
 from qdrant_client.models import MatchValue, FieldCondition, Filter
 from sentence_transformers import SentenceTransformer
+
+import aklm_lib
 
 
 # ==================================================
@@ -102,7 +103,7 @@ print(
 
 print("\nLoading Qdrant index...")
 
-client = QdrantClient(path=str(QDRANT_PATH))
+client = aklm_lib.get_qdrant()
 
 db_chunk_ids = set()
 

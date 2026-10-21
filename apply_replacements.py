@@ -14,9 +14,10 @@ except Exception:
     pass
 
 import pandas as pd
-from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, VectorParams, PointStruct
 from sentence_transformers import SentenceTransformer
+
+import aklm_lib
 
 
 # ==================================================
@@ -275,9 +276,7 @@ flush_print("Embedding complete")
 
 print("\nConnecting to Qdrant...")
 
-client = QdrantClient(
-    path=QDRANT_PATH
-)
+client = aklm_lib.get_qdrant()
 
 if args.recreate or COLLECTION_NAME not in [
     c.name for c in client.get_collections().collections
