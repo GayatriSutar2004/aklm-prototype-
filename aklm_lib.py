@@ -817,7 +817,7 @@ def retrieve(query, top_k=5):
 # Sync live bot (rebuild api/vectors.json + push)
 # ==========================================
 
-def sync_live(chunks, repo_path=None):
+def sync_live(chunks, repo_path=None, push=True):
 
     repo_path = Path(
         repo_path
@@ -859,6 +859,14 @@ def sync_live(chunks, repo_path=None):
         json.dump(entries, f, ensure_ascii=False)
 
     print(f"   Wrote {len(entries)} vectors -> {vectors_file}")
+
+    if not push:
+
+        # CI mode: the workflow commits and pushes the file itself.
+        # Still validate the clone so a broken repo is caught early.
+        print("   (push disabled; caller will commit and push)")
+
+        return {"entries": len(entries), "committed": False, "pushed": False}
 
     def git(*args):
         return subprocess.run(

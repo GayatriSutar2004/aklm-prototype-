@@ -57,6 +57,12 @@ def parse_args():
     )
 
     parser.add_argument(
+        "--no-push",
+        action="store_true",
+        help="With --sync-live: only write api/vectors.json, do not commit/push"
+    )
+
+    parser.add_argument(
         "--repo",
         default=None,
         help="Path to the adcetportal clone (overrides ADCETPORTAL_REPO)"
@@ -141,7 +147,7 @@ def main():
 
         step(4, "SYNC LIVE BOT")
 
-        aklm_lib.sync_live(chunks, repo_path=args.repo)
+        aklm_lib.sync_live(chunks, repo_path=args.repo, push=not args.no_push)
 
     # --------------------------------------
     # Optional query test
