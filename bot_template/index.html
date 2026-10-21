@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Assistant</title>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        background: #f4f6fb;
+        color: #1a2233;
+      }
+      #chat {
+        max-width: 720px;
+        margin: 0 auto;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      header {
+        padding: 16px 20px;
+        background: #1f3864;
+        color: #fff;
+        font-weight: 600;
+      }
+      #messages {
+        flex: 1;
+        overflow-y: auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .msg {
+        max-width: 80%;
+        padding: 10px 14px;
+        border-radius: 14px;
+        line-height: 1.45;
+        white-space: pre-wrap;
+      }
+      .user { align-self: flex-end; background: #1f3864; color: #fff; }
+      .bot { align-self: flex-start; background: #fff; border: 1px solid #e2e6ee; }
+      .sources { font-size: 12px; color: #6b7385; margin-top: 6px; }
+      footer {
+        display: flex;
+        gap: 8px;
+        padding: 14px;
+        background: #fff;
+        border-top: 1px solid #e2e6ee;
+      }
+      input {
+        flex: 1;
+        padding: 12px 14px;
+        border: 1px solid #cdd3df;
+        border-radius: 10px;
+        font-size: 15px;
+      }
+      button {
+        padding: 12px 18px;
+        border: none;
+        border-radius: 10px;
+        background: #1f3864;
+        color: #fff;
+        font-size: 15px;
+        cursor: pointer;
+      }
+      button:disabled { opacity: 0.5; cursor: default; }
+    </style>
+  </head>
+  <body>
+    <div id="chat">
+      <header>AI Assistant</header>
+      <div id="messages">
+        <div class="msg bot">Hi! Ask me anything about this website.</div>
+      </div>
+      <footer>
+        <input id="input" placeholder="Type your question..." autocomplete="off" />
+        <button id="send">Send</button>
+      </footer>
+    </div>
+
+    <script>
+      const messages = document.getElementById("messages");
+      const input = document.getElementById("input");
+      const send = document.getElementById("send");
+
+      function add(text, cls, sources) {
+        const div = document.createElement("div");
+        div.className = "msg " + cls;
+        div.textContent = text;
+        if (sources && sources.length) {
+          const s = document.createElement("div");
+          s.className = "sources";
+          s.textContent = "Sources: " + sources.map((x) => x.chunk_id).join(", ");
+          div.appendChild(s);
+        }
+        messages.appendChild(div);
+        messages.scrollTop = messages.scrollHeight;
+        return div;
+      }
+
+      async function ask() {
+        const question = input.value.trim();
+        if (!question) return;
+        input.value = "";
+        add(question, "user");
+        send.disabled = true;
+        const pending = add("...", "bot");
+
+        try {
+          const res = await fetch("/api/ask", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ question }),
+          });
+          const data = await res.json();
+          pending.textContent = data.answer || "No answer.";
+          if (data.sources && data.sources.length) {
+            const s = document.createElement("div");
+            s.className = "sources";
+            s.textContent =
+              "Sources: " + data.sources.map((x) => x.chunk_id).join(", ");
+            pending.appendChild(s);
+          }
+        } catch (e) {
+          pending.textContent = "Sorry, something went wrong. Try again.";
+        } finally {
+          send.disabled = false;
+          input.focus();
+        }
+      }
+
+      send.addEventListener("click", ask);
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") ask();
+      });
+    </script>
+  </body>
+</html>

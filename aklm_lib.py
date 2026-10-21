@@ -34,6 +34,8 @@ PROJECT_DIR = Path(__file__).parent
 
 ENV_PATH = PROJECT_DIR / ".env"
 
+load_dotenv(ENV_PATH)
+
 SCRAPED_DIR = PROJECT_DIR / "scraped_data"
 
 CHUNKS_FILE = PROJECT_DIR / "chunks.json"
@@ -44,7 +46,7 @@ QDRANT_PATH = str(PROJECT_DIR / "qdrant_storage")
 
 COLLECTION_NAME = "aklm_live"
 
-SITE_URL = "https://adcetportal.vercel.app/"
+SITE_URL = os.getenv("SITE_URL", "https://adcetportal.vercel.app/")
 
 EMBED_MODEL = "gemini-embedding-001"
 
@@ -56,12 +58,12 @@ GEN_MODELS = [
     "gemini-flash-lite-latest",
 ]
 
-DEFAULT_ADCETPORTAL_REPO = r"C:\Users\gayat\AppData\Local\Temp\opencode\adcetportal"
+DEFAULT_ADCETPORTAL_REPO = os.getenv(
+    "ADCETPORTAL_REPO",
+    r"C:\Users\gayat\AppData\Local\Temp\opencode\adcetportal"
+)
 
 GEMINI_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
-
-
-load_dotenv(ENV_PATH)
 
 
 # ==========================================
@@ -816,10 +818,14 @@ def sync_live(chunks, repo_path=None):
 
     vectors_file = repo_path / "api" / "vectors.json"
 
-    if not (repo_path / ".git").exists():
+    git_dir = repo_path / ".git"
+
+    if not git_dir.exists() or not (git_dir / "HEAD").exists():
         raise RuntimeError(
-            f"adcetportal repo not found at {repo_path}. "
-            "Clone it or pass --repo <path>."
+            f"{repo_path} is not a valid git clone (missing/broken .git). "
+            "This usually means the clone was deleted or corrupted. "
+            "Re-clone it first, e.g.:  "
+            f'git clone <repo-url> "{repo_path}"'
         )
 
     embeddings = embed_texts(
@@ -853,6 +859,20 @@ def sync_live(chunks, repo_path=None):
             text=True
         )
 
+    # Safety: make sure git really treats repo_path as the repo root. If its
+    # ".git" is broken, git would silently walk up to a parent repo (e.g. an
+    # accidental repo in the user's home folder).
+    toplevel = git("rev-parse", "--show-toplevel")
+
+    if (
+        toplevel.returncode != 0
+        or Path(toplevel.stdout.strip()).resolve() != repo_path.resolve()
+    ):
+        raise RuntimeError(
+            f"Refusing to sync: git resolved '{repo_path}' to "
+            f"'{toplevel.stdout.strip()}'. Re-clone {repo_path} first."
+        )
+
     git("add", "api/vectors.json")
 
     status = git("status", "--porcelain")
@@ -870,9 +890,35 @@ def sync_live(chunks, repo_path=None):
     if commit.returncode != 0:
         raise RuntimeError(f"git commit failed: {commit.stderr.strip()}")
 
-    push = git("push")
+    # Integrate any remote commits that landed while we were working, then push.
+    # Retry a few times in case the remote moves again mid-push.
+    push = None
 
-    if push.returncode != 0:
+    for attempt in range(1, 4):
+
+        branch = git("rev-parse", "--abbrev-ref", "HEAD").stdout.strip() or "main"
+
+        git("fetch", "origin")
+
+        pull = git("pull", "--rebase", "origin", branch)
+
+        if pull.returncode != 0:
+            raise RuntimeError(
+                "git pull --rebase failed (possible conflict): "
+                + (pull.stderr.strip() or pull.stdout.strip())
+            )
+
+        push = git("push", "origin", branch)
+
+        if push.returncode == 0:
+            break
+
+        print(f"   [retry] push rejected, retrying ({attempt}/3)...")
+
+        time.sleep(2)
+
+    else:
+
         raise RuntimeError(f"git push failed: {push.stderr.strip()}")
 
     print("   Committed and pushed -> Vercel will redeploy.")
